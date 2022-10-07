@@ -34,6 +34,10 @@ So to achieve this, all asset need to be encoded in base64, including all the fo
 - Code refactor
 - WIP
 
+## Demo
+[DinoNouns](https://recondite-flame.surge.sh)
+
+
 ## TODO
 - add icons for the stats, preferably 1-bit
 - use latest design mockup
