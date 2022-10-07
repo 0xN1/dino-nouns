@@ -5,19 +5,18 @@
     <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Tamo</title>
+    <title>Dino</title>
+    <link rel="icon" id="dynFav" href="" type="image/svg+xml">
 </head>
 
 <body>
     <div id='container'>
         <h1 id='title'>dino</h1>
-
         <div id='dinoDetails'></div>
-        <div id='dinoImage'></div><br><br>
+        <div id='dinoImage'></div>
+        <br><br>
         <h1 id='dinoName'>dino</h1>
-        <input type='text' placeholder='type.' id='inputText' autocomplete='off' autocorrect='off' autocapitalize='off'
-            spellcheck='false' autofocus>
-        <button type='submit' onclick='runCMD()' id='btnSubmit'>SUB</button>
+        <input type='text' placeholder='type here' id='inputText' autofocus>
         <span id='log'></span>
     </div>
 
@@ -80,15 +79,13 @@
 
     const localStorage = window.localStorage
     const prefix = '/'
+    const nounsAPI = 'https://api.cloudnouns.com/v1/pfp?head=69&background=n&text='
 
     let inputText = document.getElementById('inputText')
-    let btnSubmit = document.getElementById('btnSubmit')
     let dinoImage = document.getElementById('dinoImage')
     let dinoDetails = document.getElementById('dinoDetails')
     let dinoName = document.getElementById('dinoName')
     let outputLog = document.getElementById('log')
-
-    btnSubmit.hidden = true
 
     function Dino() {
         this.name = localStorage.dinoName
@@ -98,6 +95,14 @@
     }
 
     const ding = new Dino()
+
+    const setTitleFavicon = () => {
+        // encode svg to base64
+        let favicon = `data:image/svg+xml;base64,${btoa(ding.image)}`
+        // use svg as favicon
+        document.getElementById('dynFav').href = favicon
+        document.title = ding.name
+    }
 
     const setInit = (svg,name) => {
         const baseStat = 
@@ -126,10 +131,12 @@
         AGI : ${ding.stats.agi}
         `
         dinoImage.innerHTML = ding.image
+
+        setTitleFavicon()
     }
 
     const getDino = async (name) => {
-        await fetch(`https://api.cloudnouns.com/v1/pfp?head=69&text=${name}&background=n`)
+        await fetch(nounsAPI+name)
             .then((response) => response.text())
             .then((svg) => setInit(svg,name))
     }
@@ -193,16 +200,20 @@
     const clearLog = () => log('')
     const log = msg => outputLog.innerHTML = msg
 
+    // RUN on start
     if (ding.image && ding.name && ding.stats) {
+        setTitleFavicon()
+
         dinoImage.innerHTML = ding.image
         dinoName.innerHTML = ding.name
+
         updateStats()
     }
 
     inputText.addEventListener('keypress', function (event) {
         if (event.key === 'Enter') {
             event.preventDefault()
-            btnSubmit.click()
+            runCMD()
         }
     })
 
@@ -215,7 +226,7 @@
 
 
     // COMMANDS ------------------------------------------------------
-    
+    // Create your command logic
 
     const run = {
         name: 'run',
@@ -310,8 +321,9 @@
 
     const help = {
         name: 'help',
-        args: true,
+        args: false,
         async exec(args){
+            if (!args.length) return log('Get the help file for commands<br>Usage: /help [command]')
             const name = args[0].toLowerCase();
             const cmd = cmds.find(cmd => cmd.name === name) || cmds.find(c => c.aliases && c.aliases.includes(name));
             if (!cmd) return log('Unknown command')
@@ -342,6 +354,7 @@
         }
     }
 
+    // Add your commands here
     let cmds = [run,jump,dino,ping,help,clear,reset]
 
     const runCMD = async () => {
