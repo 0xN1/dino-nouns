@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Tamo</title>
+</head>
+
+<body>
+    <div id='container'>
+        <h1 id='title'>dino</h1>
+
+        <div id='dinoDetails'></div>
+        <div id='dinoImage'></div><br><br>
+        <h1 id='dinoName'>dino</h1>
+        <input type='text' placeholder='type.' id='inputText' autocomplete='off' autocorrect='off' autocapitalize='off'
+            spellcheck='false' autofocus>
+        <button type='submit' onclick='runCMD()' id='btnSubmit'>SUB</button>
+        <span id='log'></span>
+    </div>
+
+</body>
+<style>
+    /* @import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap'); */
+    @import url('https://fonts.googleapis.com/css2?family=Bayon&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
+    @font-face {
+        font-family: 'Nountown';
+        src: url(data:application/octet-stream;base64,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);
+    }
+
+    * {
+        font-family: 'Bayon', sans-serif;
+        font-size: 1.1em;
+    }
+
+    #title {
+        font-family: 'Nountown';
+        font-size: 3em;
+        margin: 0.2em;
+    }
+
+    #dinoName {
+        font-family: 'Bayon';
+        font-size: 3em;
+        margin: 0.2em;
+    }
+
+    #dinoImage {
+        margin: -2em;
+        animation: ease 1s loop infinite;
+        animation-name: idle;
+    }
+
+    #log {
+        line-height: 1em;
+        margin: 0.5em;
+    }
+
+    #container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        height: 100vh;
+        color: #333;
+        text-align: center;
+    }
+
+    @keyframes run {0% {transform: translateX(0px)}50% {transform: translateX(30px)}100% {transform: translateX(0px)}}
+    @keyframes jump {0% {transform: translateY(0px)}50% {transform: translateY(-30px)}100% {transform: translateY(0px)}}
+    @keyframes idle {0% {transform: translateY(0px)}50% {transform: translateY(3px)}100% {transform: translateY(0px)}}
+
+</style>
+<script>
+
+    const localStorage = window.localStorage
+    const prefix = '/'
+
+    let inputText = document.getElementById('inputText')
+    let btnSubmit = document.getElementById('btnSubmit')
+    let dinoImage = document.getElementById('dinoImage')
+    let dinoDetails = document.getElementById('dinoDetails')
+    let dinoName = document.getElementById('dinoName')
+    let outputLog = document.getElementById('log')
+
+    btnSubmit.hidden = true
+
+    function Dino() {
+        this.name = localStorage.dinoName
+        this.age = localStorage.dinoAge
+        this.image = localStorage.dinoImage
+        this.stats = localStorage.dinoStats ? JSON.parse(localStorage.dinoStats) : {}
+    }
+
+    const ding = new Dino()
+
+    const setInit = (svg,name) => {
+        const baseStat = 
+        {
+            str: 1,
+            agi: 1
+        }
+
+        localStorage.dinoImage = svg
+        localStorage.dinoName = name
+        localStorage.dinoAge = 1
+        localStorage.dinoStats = JSON.stringify(baseStat)
+
+        ding.stats = JSON.parse(localStorage.dinoStats)
+        ding.name = localStorage.dinoName
+        ding.image = localStorage.dinoImage
+        ding.age = 1
+
+        dinoName.innerHTML = ding.name
+        dinoDetails.innerHTML = `
+        STATS<br>
+        AGE : ${ding.age}
+        |
+        STR : ${ding.stats.str}
+        |
+        AGI : ${ding.stats.agi}
+        `
+        dinoImage.innerHTML = ding.image
+    }
+
+    const getDino = async (name) => {
+        await fetch(`https://api.cloudnouns.com/v1/pfp?head=69&text=${name}&background=n`)
+            .then((response) => response.text())
+            .then((svg) => setInit(svg,name))
+    }
+
+    if (!localStorage.dinoImage && !localStorage.dinoName && !localStorage.dinoStats) {
+        getDino('dino')
+    }
+
+    const addStat = (key,val) => {
+        if (ding.stats.hasOwnProperty(key)) {
+            ding.stats[key] += val
+            // console.log(ding.stats[key])
+        } else {
+            console.error('No such stat')
+        }
+    }
+
+    const subStat = (key,val) => {
+        if (ding.stats.hasOwnProperty(key)) {
+            ding.stats[key] -= val
+            // console.log(ding.stats[key])
+        } else {
+            console.error('No such stat')
+        }
+    }
+
+    const setStat = (key,val) => {
+        if (ding.stats.hasOwnProperty(key)) {
+            ding.stats[key] = val
+            // console.log(ding.stats[key])
+        } else {
+            console.error('No such stat')
+        }
+    }
+
+
+    const updateStats = async () => {
+        if (ding.stats) {
+            let stats = ding.stats
+            // console.log(stats)
+
+            let age = ding.age
+
+            localStorage.dinoAge = age
+            localStorage.dinoStats = JSON.stringify(stats)
+
+            dinoDetails.innerHTML = `
+                STATS<br>
+                AGE : ${parseFloat(ding.age).toFixed(2)}
+                |
+                STR : ${ding.stats.str.toFixed(2)}
+                |
+                AGI : ${ding.stats.agi.toFixed(2)}
+                `
+        }
+    }
+
+    const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
+
+    const resetAnimation = () => dinoImage.style.animationName = ''
+    const clearLog = () => log('')
+    const log = msg => outputLog.innerHTML = msg
+
+    if (ding.image && ding.name && ding.stats) {
+        dinoImage.innerHTML = ding.image
+        dinoName.innerHTML = ding.name
+        updateStats()
+    }
+
+    inputText.addEventListener('keypress', function (event) {
+        if (event.key === 'Enter') {
+            event.preventDefault()
+            btnSubmit.click()
+        }
+    })
+
+    const updateAge = () => {
+        ding.age = parseFloat(ding.age) + 0.1
+        updateStats()
+    }
+
+    setInterval('updateAge()', 1000 * 60) // 1 min
+
+
+    // COMMANDS ------------------------------------------------------
+    
+
+    const run = {
+        name: 'run',
+        args: false,
+        help: 'run! agi+ energy-.<br>usage: /run',
+        async exec(args){
+            dinoImage.style.animationName = 'run'
+            log('running..')
+            await sleep(500)
+            log('running...')
+            await sleep(500)
+            log('running....')
+            await sleep(500)
+            log('running.....')
+            await sleep(500)
+            clearLog()
+
+            const agiMult = parseFloat(ding.stats.agi)
+            addStat('agi', 0.01 * agiMult)
+            resetAnimation()
+            updateStats()
+        }
+    }
+
+    const jump = {
+        name: 'jump',
+        aliases: ['j','lompat'],
+        args: false,
+        help: 'jump! str+ energy-.<br>usage: /jump',
+        async exec(args){
+            dinoImage.style.animationName = 'jump'
+            log('jumping..')
+            await sleep(500)
+            log('jumping...')
+            await sleep(500)
+            log('jumping....')
+            await sleep(500)
+            log('jumping.....')
+            await sleep(500)
+            clearLog()
+
+            let strMult = parseFloat(ding.stats.str)
+            addStat('str', 0.01 * strMult)
+            resetAnimation()
+            updateStats()
+        }
+    }
+
+    const dino = {
+        name: 'dino',
+        args: true,
+        help: 'create new dino.<br>usage: /dino [name]',
+        async exec(args){
+            let name = args.slice(0).join(' ')
+            log('running through the eggs..')
+            await sleep(1000)
+            log('fetching dino..')
+            await sleep(1000)
+            if (name.length > 0) {
+                await getDino(name)
+            } else {
+                log('no name specified')
+            }
+            clearLog()
+        }
+    }
+    
+
+    const ping = {
+        name: 'ping',
+        args: false,
+        wip: true,
+        help: 'ping pong!<br>usage: /ping',
+        async exec(args){
+            log('pong')
+            await sleep(1000)
+            clearLog()
+        }
+    }
+
+    const clear = {
+        name: 'clear',
+        args: false,
+        aliases: ['cls','clr'],
+        help: 'clear log<br>usage: /clear',
+        async exec(args){
+            log('clearing log')
+            await sleep(500)
+            clearLog()
+        }
+    }
+
+    const help = {
+        name: 'help',
+        args: true,
+        async exec(args){
+            const name = args[0].toLowerCase();
+            const cmd = cmds.find(cmd => cmd.name === name) || cmds.find(c => c.aliases && c.aliases.includes(name));
+            if (!cmd) return log('Unknown command')
+            if (!cmd.help) {
+                log('no help file. contact admin')
+                await sleep(1000)
+                clearLog()
+            } else {
+                log(cmd.help)
+                await sleep(5000)
+                clearLog()
+            }
+            
+        }
+    }
+
+    const reset = {
+        name: 'reset',
+        args: false,
+        help: 'reset dino<br>usage: /reset',
+        async exec(args) {
+            log('initiate comlink..')
+            await sleep(1000)
+            log('fetching default dino..')
+            await sleep(1000)
+            getDino('dino')
+            clearLog()
+        }
+    }
+
+    let cmds = [run,jump,dino,ping,help,clear,reset]
+
+    const runCMD = async () => {
+
+        if (!inputText.value.startsWith(prefix)) return log('pls use / prefix<br>eg: /run')
+
+        const args = inputText.value.slice(prefix.length).trim().split(/ +/)
+        const commandName = args.shift().toLowerCase()
+        const command = cmds.find(cmd => cmd.name === commandName) || cmds.find(cmd => cmd.aliases && cmd.aliases.includes(commandName))
+        
+        if (!command) return log('Unknown command')
+        if (command.args && !args.length) return log('No parameter provided')
+
+        try {
+            if (command.wip) console.log('-------EXPERIMENTAL FEATURE-------')
+            await command.exec(args)    
+        } catch (error) {
+            console.error(error)
+            console.log('there was an error trying to execute that command!')
+        }
+    }
+
+
+</script>
+
+</html>
