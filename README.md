@@ -32,18 +32,24 @@ So to achieve this, all asset need to be encoded in base64, including all the fo
 - Age stat changes over time
 - New design mockup
 - Code refactor
-- WIP
+- Commands now has random rate to fail
 
 ## Demo
 [DinoNouns](https://recondite-flame.surge.sh)
 
 
 ## TODO
+- randomisation for command usage [x]
+- lowercase every command [x]
 - add icons for the stats, preferably 1-bit
 - use latest design mockup
+- dino reaction text
+- WIP
+
+
+## FUTURE
+- utils cmd for nounish stuff
 - cmd to map button
 - use keyboard
 - use gamepad api 
-- dino reaction text
-- randomisation for command usage
-- lowercase every command
+- chrome extension?

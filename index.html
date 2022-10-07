@@ -357,24 +357,50 @@
     // Add your commands here
     let cmds = [run,jump,dino,ping,help,clear,reset]
 
+    
+
     const runCMD = async () => {
 
-        if (!inputText.value.startsWith(prefix)) return log('pls use / prefix<br>eg: /run')
+        
+
+        let random = Math.floor(Math.random()*10)
+        console.log(random)
+        if (random < 5) return log(`${ding.name} doesn't feel like it`)
+
+        // if (!inputText.value.startsWith(prefix)) return log('pls use / prefix<br>eg: /run')
+        if (!inputText.value.startsWith(prefix)) return runConv()
 
         const args = inputText.value.slice(prefix.length).trim().split(/ +/)
         const commandName = args.shift().toLowerCase()
         const command = cmds.find(cmd => cmd.name === commandName) || cmds.find(cmd => cmd.aliases && cmd.aliases.includes(commandName))
         
-        if (!command) return log('Unknown command')
+        if (!command) return log('Unknown command. use /help')
         if (command.args && !args.length) return log('No parameter provided')
 
         try {
             if (command.wip) console.log('-------EXPERIMENTAL FEATURE-------')
-            await command.exec(args)    
+            await command.exec(args)  
         } catch (error) {
             console.error(error)
             console.log('there was an error trying to execute that command!')
         }
+    }
+
+    const repl = [
+        {hi:'hello human'},
+        {haha:'hahaha'},
+        {hungry:'plis go eat'},
+        {help:'use /help'},
+        {wait:'wat?'},
+    ]
+
+    const runConv = async () => {
+        const msg = inputText.value
+        let rr = repl.filter(r => r[msg] != null)
+        if (msg.includes('?')) return log('what?')
+        if (msg.includes('!')) return log('patience..')
+        if (!rr.length) return log('....')
+        if (rr.length > 0) log(rr[0][msg])
     }
 
 
