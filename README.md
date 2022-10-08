@@ -2,9 +2,9 @@
 
 ![Image](https://cdn.discordapp.com/attachments/1014135287087108196/1026983796152746004/unknown.png)
 
-DinoNouns(name to be decided). An interactive NFT project by Nero One based off [nouns](https://nouns.wtf) dino head
+DinoNouns(working title). An interactive NFT project by Nero One based off [nouns](https://nouns.wtf) dino head
 
-## Ideas
+# Ideas
 I've worked on several Interactive NFT project and most of it was off-chain, [COMLINK+](https://opensea.io/assets/ethereum/0x1b7e73c6d30dd5dd811cbd26d9bf36e34882fd39/3)(pointed to a website), [tulsv1](https://exchange.art/editions/HkMrXQ7NRZy7UuSvLSpW8Vhut7ZnPn9phRYKerCZ8uba)(uploaded to IPFS).
 
 However this time I wanted to put the whole HTML on-chain + interactive.
@@ -34,10 +34,24 @@ So to achieve this, all asset need to be encoded in base64, including all the fo
 - Code refactor
 - Commands now has random rate to fail
 
-## Demo
+# Demo
 [DinoNouns](https://recondite-flame.surge.sh)
 
+# Installation
 
+Clone repo
+
+`git clone https://github.com/0xN1/dino-nouns.git`
+
+Install packages
+
+`npm install` / `yarn install`
+
+Run the webserver
+
+`npm run start` / `yarn start`
+
+---
 ## TODO
 - randomisation for command usage [x]
 - lowercase every command [x]
