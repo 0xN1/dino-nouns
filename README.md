@@ -1,6 +1,8 @@
 # dino-nouns
 
-![Image](https://cdn.discordapp.com/attachments/1014135287087108196/1026983796152746004/unknown.png)
+A work in progress
+
+![Image](https://cdn.discordapp.com/attachments/1014135287087108196/1028545362522292244/unknown.png)
 
 DinoNouns(working title). An interactive NFT project by Nero One based off [nouns](https://nouns.wtf) dino head
 
@@ -17,11 +19,52 @@ So to achieve this, all asset need to be encoded in base64, including all the fo
 - Text-based command interaction
 - Uses [CloudNouns](https://cloudnouns.com) API to generate new Dino nouns
 - Dino stats
+- CSS Animation
 - Basic Gamification
 - Uses local storage for data
 - Dynamic favicon and title
-- Utility commands like `/help`, `/reset`
+- Utility commands like `/help`, `/reset`, `/map`
+- Commands have `30%` chance to fail
 - more..
+
+---
+
+## Commands
+
+List of commands
+
+| Command | Desc | Usage | eg|
+|-|-|-|-|
+|/dino|create your dino|/dino [name]|/dino abu|
+|[any]|dino will say it back|[any]|hi|
+|/run|make dino run|/run|/run|
+|/jump|make dino jump|/jump|/jump|
+|/clear|clear logs|/clear|/clear|
+|/reset|reset to default dino|/reset|/reset|
+|/map|map command to button|/map [btn][command]|/map a run|
+
+## Demo
+[DinoNouns](https://recondite-flame.surge.sh)
+
+
+## Installation
+Clone repo
+
+`git clone https://github.com/0xN1/dino-nouns.git`
+
+Install packages
+
+`npm install` / `yarn install`
+
+Run the dev server
+
+`npm run start` / `yarn start`
+
+Build for production. File will be created in `dist`
+
+`npm run build` / `yarn build`
+
+---
 
 ## Progress
 - Basic command setup
@@ -33,37 +76,18 @@ So to achieve this, all asset need to be encoded in base64, including all the fo
 - New design mockup
 - Code refactor
 - Commands now has random rate to fail
-
-# Demo
-[DinoNouns](https://recondite-flame.surge.sh)
-
-# Installation
-
-Clone repo
-
-`git clone https://github.com/0xN1/dino-nouns.git`
-
-Install packages
-
-`npm install` / `yarn install`
-
-Run the webserver
-
-`npm run start` / `yarn start`
-
----
-## TODO
-- randomisation for command usage [x]
-- lowercase every command [x]
-- add icons for the stats, preferably 1-bit
+- randomisation for command usage
+- lowercase every command 
 - use latest design mockup
 - dino reaction text
-- WIP
+- cmd to map button `/map`
+- keyboard shortcut, A,B,X,Y button mapped to responding keys
 
+## TODO
+- add icons for the stats, preferably 1-bit
+- stats creation and manipulation
 
 ## FUTURE
 - utils cmd for nounish stuff
-- cmd to map button
-- use keyboard
 - use gamepad api 
 - chrome extension?
