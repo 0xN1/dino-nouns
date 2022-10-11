@@ -11,11 +11,11 @@
 
 <body>
     <div class="wrapper">
+        <img id='dinoImage' class='dino'></img>
         <svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="500" height="500" rx="1em" fill="#ECECEC"/>
-            <rect x="10" y="10" width="480" height="480" rx="0.65em" stroke="#D9D9D9" stroke-width="6"/>
+            <rect x="10" y="10" width="480" height="480" rx="0.65em" stroke="#d0c8c6" stroke-width="6"/>
             <g filter="url(#filter0_d_0_1)">
-            <rect x="44" y="60" width="412" height="234" rx="12" stroke="#D9D9D9" stroke-width="6" shape-rendering="crispEdges"/>
+            <rect x="44" y="60" width="412" height="234" rx="12" stroke="#d0c8c6" stroke-width="6" shape-rendering="crispEdges"/>
             </g>
             <g filter="url(#filter1_i_0_1)">
             <rect width="148" height="60" rx="15" transform="matrix(1 0 0 -1 176 87)" fill="#34AC80"/>
@@ -24,7 +24,7 @@
             <rect x="44" y="356" width="194" height="36" rx="12" stroke="#34AC80" stroke-width="6" shape-rendering="crispEdges"/>
             </g>
             <g filter="url(#filter3_d_0_1)">
-            <rect x="42" y="409" width="414" height="42" rx="15" fill="#D9D9D9"/>
+            <rect x="42" y="409" width="414" height="42" rx="15" fill="#d0c8c6"/>
             </g>
             <defs>
             <filter id="filter0_d_0_1" x="37" y="57" width="426" height="248" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
@@ -89,25 +89,18 @@
             </defs>
         </svg>
        
-        <div id='dinoImage' class='dino'></div>
+        
         <h1 id='dinoName'>dino</h1>
         <input type='text' placeholder='type here' id='inputText' autofocus>
         <span id='log'></span>
         <span id='reaction'></span>
             
-        <div class="btns" id="btnA"></div>
-        <div class="btns" id="btnB"></div>
-        <div class="btns" id="btnX"></div>
-        <div class="btns" id="btnY"></div>
+        <div class="btns" id="btnA">A</div>
+        <div class="btns" id="btnB">B</div>
+        <div class="btns" id="btnX">X</div>
+        <div class="btns" id="btnY">Y</div>
         <div id="btnLvl"></div>
-        <span id="lvlTxt">LV1</span>
-
-        <!-- <svg width="172" height="18" id="abxy" viewBox="0 0 172 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0.0195312 17.8828L2.99609 1.39453C3.01172 1.33203 3.05078 1.30078 3.11328 1.30078H6.59375C6.65625 1.30078 6.69531 1.33203 6.71094 1.39453L9.57031 17.8828C9.57812 17.9609 9.54688 18 9.47656 18H6.81641C6.73828 18 6.69531 17.9609 6.6875 17.8828L6.42969 16.125H3.16016L2.90234 17.8828C2.89453 17.9609 2.85547 18 2.78516 18H0.113281C0.0507812 18 0.0195312 17.9609 0.0195312 17.8828ZM4.96484 6.82031L4.82422 5.92969L4.71875 6.82031L3.64062 13.5586H5.94922L4.96484 6.82031Z" fill="#0E0E0E"/>
-            <path d="M58.7773 18H54.4766C54.4141 18 54.3828 17.9609 54.3828 17.8828L54.4297 1.39453C54.4297 1.33203 54.4609 1.30078 54.5234 1.30078H59.1406C60.0391 1.30078 60.8555 1.51953 61.5898 1.95703C62.3086 2.39453 62.875 2.97656 63.2891 3.70312C63.7031 4.42188 63.9102 5.20312 63.9102 6.04688C63.9102 6.73438 63.7539 7.375 63.4414 7.96875C63.1289 8.5625 62.7578 9.04297 62.3281 9.41016C62.7891 9.87109 63.1484 10.4062 63.4062 11.0156C63.6641 11.625 63.793 12.2656 63.793 12.9375C63.793 13.8672 63.5703 14.7148 63.125 15.4805C62.6719 16.2461 62.0664 16.8594 61.3086 17.3203C60.5508 17.7734 59.707 18 58.7773 18ZM59.1406 4.14844H57.3125V7.92188H59.1406C59.6953 7.92188 60.1445 7.72656 60.4883 7.33594C60.832 6.9375 61.0039 6.50781 61.0039 6.04688C61.0039 5.53906 60.8203 5.09766 60.4531 4.72266C60.0859 4.33984 59.6484 4.14844 59.1406 4.14844ZM58.7773 10.8281H57.3125L57.2891 15.0703H58.7773C59.3555 15.0703 59.8516 14.8594 60.2656 14.4375C60.6797 14.0156 60.8867 13.5156 60.8867 12.9375C60.8867 12.3594 60.6797 11.8633 60.2656 11.4492C59.8516 11.0352 59.3555 10.8281 58.7773 10.8281Z" fill="#0E0E0E"/>
-            <path d="M111.055 18H108.359C108.305 18 108.281 17.9609 108.289 17.8828L111.031 9.31641L108.336 1.39453C108.32 1.33203 108.344 1.30078 108.406 1.30078H111.102C111.18 1.30078 111.227 1.33203 111.242 1.39453L112.848 7.10156L114.477 1.39453C114.492 1.33203 114.543 1.30078 114.629 1.30078H117.289C117.352 1.30078 117.375 1.33203 117.359 1.39453L114.676 9.29297L117.383 17.8828C117.414 17.9609 117.391 18 117.312 18H114.629C114.559 18 114.508 17.9609 114.477 17.8828L112.848 11.6836L111.195 17.8828C111.188 17.9609 111.141 18 111.055 18Z" fill="#0E0E0E"/>
-            <path d="M168.137 17H165.383C165.328 17 165.301 16.9688 165.301 16.9062L165.324 10.0859L162.113 0.394531C162.098 0.332031 162.121 0.300781 162.184 0.300781H164.855C164.934 0.300781 164.98 0.332031 164.996 0.394531L166.766 6.85156L168.57 0.394531C168.586 0.332031 168.625 0.300781 168.688 0.300781H171.383C171.445 0.300781 171.469 0.332031 171.453 0.394531L168.207 9.99219L168.23 16.9062C168.23 16.9688 168.199 17 168.137 17Z" fill="#0E0E0E"/>
-        </svg> -->
+        <span id="lvlTxt"></span>
     </div>  
         
     <!-- <div id='dinoDetails'></div> -->
@@ -121,6 +114,7 @@
         src: url(data:application/octet-stream;base64,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);
     }
 
+    /* base64 bayon font */
     /* @font-face {
         font-family: 'Bayon';
         font-style: normal;
@@ -135,7 +129,7 @@
     }
 
     body{
-        background-color: #D9D9D9;
+        background-color: #e1d7d5;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -146,10 +140,10 @@
         min-height: 500px;
         margin: 0px;
         overflow: hidden;
+        color: '#0E0E0E';
     }
 
     #inputText {
-
         position: absolute;
         width: 173px;
         height: 43px;
@@ -158,14 +152,8 @@
         background: rgba(0, 0, 0, 0);
         border: 0!important;
         outline: 0!important;
-
-        font-family: 'Bayon';
-        font-style: normal;
-        font-weight: 400;
         font-size: 24px;
         line-height: 43px;
-
-        color: #0E0E0E;
     }
 
     #dinoName {
@@ -175,19 +163,13 @@
         left: 160px;
         top: 290px;
         text-align: center;
-
-        font-family: 'Bayon';
-        font-style: normal;
         font-weight: 400;
         font-size: 35px;
         line-height: 1em;
-
-        color: #0E0E0E;
     }
 
     #dinoImage {
-        margin: -2em;
-        animation: ease 1s loop infinite;
+        animation: ease-in-out 1.2s loop infinite;
         animation-name: idle;
     }
 
@@ -201,10 +183,7 @@
         width: 356px;
         height: 1em;
         color: #646464;
-        font-family: Bayon;
         font-size: 24px;
-        font-style: normal;
-        font-weight: 400;
         line-height: 1em;
         position: absolute;
         text-align: left;
@@ -222,16 +201,9 @@
         height: 4em;
         left: 339px;
         top: 116px;
-        word-wrap: break-word;
-
-        font-family: 'Bayon';
-        font-style: normal;
-        font-weight: 400;
+        word-break: break-word;
         font-size: 1em;
-        line-height: 1em;
         overflow: hidden;
-
-        color: #0E0E0E;
     }
 
     .wrapper{
@@ -239,16 +211,17 @@
     }
 
     .dino {
+        z-index: -1;
         position: absolute;
         width: 200.86px;
         height: 204.96px;
-        scale: 0.6;
-        top: 100px;
+        top: 85px;
         left: 156px;
     }
 
     .btns {
-        background: #D9D9D9;
+        position: absolute;
+        background: #d0c8c6;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 15px;
     }
@@ -258,32 +231,32 @@
     }
 
     #btnA{
-        position: absolute;
         width: 42px;
         height: 42px;
         top: 353px;
         left: 253px;
+        text-align: center;
     }
     #btnB{
-        position: absolute;
         width: 42px;
         height: 42px;
         top: 353px;
         left: 307px;
+        text-align: center;
     }
     #btnX{
-        position: absolute;
         width: 42px;
         height: 42px;
         top: 353px;
         left: 361px;
+        text-align: center;
     }
     #btnY{
-        position: absolute;
         width: 42px;
         height: 42px;
         top: 353px;
         left: 415px;
+        text-align: center;
     }
     #btnLvl{
         position: absolute;
@@ -298,21 +271,13 @@
     #lvlTxt{
         width: 2em;
         height: 43px;
-        overflow: hidden;
+        /* overflow: hidden; */
         text-align: center;
         color: #ececec;
         position: absolute;
         top: 49px;
         left: 411px;
     }
-    /* #abxy{
-        pointer-events: none;
-        position: absolute;
-        width: 171.44px;
-        height: 17.7px;
-        left: 269.02px;
-        top: 364.3px;
-    } */
 
     @keyframes run {0% {transform: translateX(0px)}50% {transform: translateX(30px)}100% {transform: translateX(0px)}}
     @keyframes jump {0% {transform: translateY(0px)}50% {transform: translateY(-30px)}100% {transform: translateY(0px)}}
@@ -328,54 +293,56 @@
 </style>
 <script>
 
-    const localStorage = window.localStorage
+    const nounsSVG = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjMyMCIgdmlld0JveD0iMCAwIDMyMCAzMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc2hhcGUtcmVuZGVyaW5nPSJjcmlzcEVkZ2VzIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTFkN2Q1IiAvPjxyZWN0IHdpZHRoPSIxNDAiIGhlaWdodD0iMTAiIHg9IjkwIiB5PSIyMTAiIGZpbGw9IiNkMjIyMDkiIC8+PHJlY3Qgd2lkdGg9IjE0MCIgaGVpZ2h0PSIxMCIgeD0iOTAiIHk9IjIyMCIgZmlsbD0iI2QyMjIwOSIgLz48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjEwIiB4PSI5MCIgeT0iMjMwIiBmaWxsPSIjZDIyMjA5IiAvPjxyZWN0IHdpZHRoPSIxNDAiIGhlaWdodD0iMTAiIHg9IjkwIiB5PSIyNDAiIGZpbGw9IiNkMjIyMDkiIC8+PHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjEwIiB4PSI5MCIgeT0iMjUwIiBmaWxsPSIjZDIyMjA5IiAvPjxyZWN0IHdpZHRoPSIxMTAiIGhlaWdodD0iMTAiIHg9IjEyMCIgeT0iMjUwIiBmaWxsPSIjZDIyMjA5IiAvPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIxMCIgeD0iOTAiIHk9IjI2MCIgZmlsbD0iI2QyMjIwOSIgLz48cmVjdCB3aWR0aD0iMTEwIiBoZWlnaHQ9IjEwIiB4PSIxMjAiIHk9IjI2MCIgZmlsbD0iI2QyMjIwOSIgLz48cmVjdCB3aWR0aD0iMjAiIGhlaWdodD0iMTAiIHg9IjkwIiB5PSIyNzAiIGZpbGw9IiNkMjIyMDkiIC8+PHJlY3Qgd2lkdGg9IjExMCIgaGVpZ2h0PSIxMCIgeD0iMTIwIiB5PSIyNzAiIGZpbGw9IiNkMjIyMDkiIC8+PHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjEwIiB4PSI5MCIgeT0iMjgwIiBmaWxsPSIjZDIyMjA5IiAvPjxyZWN0IHdpZHRoPSIxMTAiIGhlaWdodD0iMTAiIHg9IjEyMCIgeT0iMjgwIiBmaWxsPSIjZDIyMjA5IiAvPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIxMCIgeD0iOTAiIHk9IjI5MCIgZmlsbD0iI2QyMjIwOSIgLz48cmVjdCB3aWR0aD0iMTEwIiBoZWlnaHQ9IjEwIiB4PSIxMjAiIHk9IjI5MCIgZmlsbD0iI2QyMjIwOSIgLz48cmVjdCB3aWR0aD0iMjAiIGhlaWdodD0iMTAiIHg9IjkwIiB5PSIzMDAiIGZpbGw9IiNkMjIyMDkiIC8+PHJlY3Qgd2lkdGg9IjExMCIgaGVpZ2h0PSIxMCIgeD0iMTIwIiB5PSIzMDAiIGZpbGw9IiNkMjIyMDkiIC8+PHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjEwIiB4PSI5MCIgeT0iMzEwIiBmaWxsPSIjZDIyMjA5IiAvPjxyZWN0IHdpZHRoPSIxMTAiIGhlaWdodD0iMTAiIHg9IjEyMCIgeT0iMzEwIiBmaWxsPSIjZDIyMjA5IiAvPjxyZWN0IHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgeD0iMTQwIiB5PSIyNDAiIGZpbGw9IiNmZmZkZjIiIC8+PHJlY3Qgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiB4PSIxNjAiIHk9IjI0MCIgZmlsbD0iI2ZmZmRmMiIgLz48cmVjdCB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHg9IjE4MCIgeT0iMjQwIiBmaWxsPSIjZmZmZGYyIiAvPjxyZWN0IHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgeD0iMTQwIiB5PSIyNjAiIGZpbGw9IiNmZmZkZjIiIC8+PHJlY3Qgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiB4PSIxNjAiIHk9IjI2MCIgZmlsbD0iI2ZmZmRmMiIgLz48cmVjdCB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHg9IjE4MCIgeT0iMjYwIiBmaWxsPSIjZmZmZGYyIiAvPjxyZWN0IHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgeD0iMTQwIiB5PSIyODAiIGZpbGw9IiNmZmZkZjIiIC8+PHJlY3Qgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiB4PSIxNjAiIHk9IjI4MCIgZmlsbD0iI2ZmZmRmMiIgLz48cmVjdCB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHg9IjE4MCIgeT0iMjgwIiBmaWxsPSIjZmZmZGYyIiAvPjxyZWN0IHdpZHRoPSI2MCIgaGVpZ2h0PSIxMCIgeD0iMTEwIiB5PSI3MCIgZmlsbD0iIzM0YWM4MCIgLz48cmVjdCB3aWR0aD0iNjAiIGhlaWdodD0iMTAiIHg9IjExMCIgeT0iODAiIGZpbGw9IiMzNGFjODAiIC8+PHJlY3Qgd2lkdGg9IjIxMCIgaGVpZ2h0PSIxMCIgeD0iODAiIHk9IjkwIiBmaWxsPSIjMzRhYzgwIiAvPjxyZWN0IHdpZHRoPSIyMTAiIGhlaWdodD0iMTAiIHg9IjgwIiB5PSIxMDAiIGZpbGw9IiMzNGFjODAiIC8+PHJlY3Qgd2lkdGg9IjIxMCIgaGVpZ2h0PSIxMCIgeD0iODAiIHk9IjExMCIgZmlsbD0iIzM0YWM4MCIgLz48cmVjdCB3aWR0aD0iMjEwIiBoZWlnaHQ9IjEwIiB4PSI4MCIgeT0iMTIwIiBmaWxsPSIjMzRhYzgwIiAvPjxyZWN0IHdpZHRoPSIyMTAiIGhlaWdodD0iMTAiIHg9IjgwIiB5PSIxMzAiIGZpbGw9IiMzNGFjODAiIC8+PHJlY3Qgd2lkdGg9IjIxMCIgaGVpZ2h0PSIxMCIgeD0iODAiIHk9IjE0MCIgZmlsbD0iIzM0YWM4MCIgLz48cmVjdCB3aWR0aD0iMjEwIiBoZWlnaHQ9IjEwIiB4PSI4MCIgeT0iMTUwIiBmaWxsPSIjMzRhYzgwIiAvPjxyZWN0IHdpZHRoPSIyMTAiIGhlaWdodD0iMTAiIHg9IjgwIiB5PSIxNjAiIGZpbGw9IiMzNGFjODAiIC8+PHJlY3Qgd2lkdGg9IjIxMCIgaGVpZ2h0PSIxMCIgeD0iODAiIHk9IjE3MCIgZmlsbD0iIzM0YWM4MCIgLz48cmVjdCB3aWR0aD0iNTAiIGhlaWdodD0iMTAiIHg9IjkwIiB5PSIxODAiIGZpbGw9IiMzNGFjODAiIC8+PHJlY3Qgd2lkdGg9IjMwIiBoZWlnaHQ9IjEwIiB4PSIxNDAiIHk9IjE4MCIgZmlsbD0iI2ZmZmZmZiIgLz48cmVjdCB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHg9IjE3MCIgeT0iMTgwIiBmaWxsPSIjMzRhYzgwIiAvPjxyZWN0IHdpZHRoPSIzMCIgaGVpZ2h0PSIxMCIgeD0iMTgwIiB5PSIxODAiIGZpbGw9IiNmZmZmZmYiIC8+PHJlY3Qgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiB4PSIyMTAiIHk9IjE4MCIgZmlsbD0iIzM0YWM4MCIgLz48cmVjdCB3aWR0aD0iMzAiIGhlaWdodD0iMTAiIHg9IjIyMCIgeT0iMTgwIiBmaWxsPSIjZmZmZmZmIiAvPjxyZWN0IHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgeD0iMjUwIiB5PSIxODAiIGZpbGw9IiMzNGFjODAiIC8+PHJlY3Qgd2lkdGg9IjMwIiBoZWlnaHQ9IjEwIiB4PSIyNjAiIHk9IjE4MCIgZmlsbD0iI2ZmZmZmZiIgLz48cmVjdCB3aWR0aD0iNTAiIGhlaWdodD0iMTAiIHg9IjkwIiB5PSIxOTAiIGZpbGw9IiMzNGFjODAiIC8+PHJlY3Qgd2lkdGg9IjMwIiBoZWlnaHQ9IjEwIiB4PSIxNDAiIHk9IjE5MCIgZmlsbD0iI2ZmZmZmZiIgLz48cmVjdCB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHg9IjE3MCIgeT0iMTkwIiBmaWxsPSIjMzRhYzgwIiAvPjxyZWN0IHdpZHRoPSIzMCIgaGVpZ2h0PSIxMCIgeD0iMTgwIiB5PSIxOTAiIGZpbGw9IiNmZmZmZmYiIC8+PHJlY3Qgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiB4PSIyMTAiIHk9IjE5MCIgZmlsbD0iIzM0YWM4MCIgLz48cmVjdCB3aWR0aD0iMzAiIGhlaWdodD0iMTAiIHg9IjIyMCIgeT0iMTkwIiBmaWxsPSIjZmZmZmZmIiAvPjxyZWN0IHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgeD0iMjUwIiB5PSIxOTAiIGZpbGw9IiMzNGFjODAiIC8+PHJlY3Qgd2lkdGg9IjMwIiBoZWlnaHQ9IjEwIiB4PSIyNjAiIHk9IjE5MCIgZmlsbD0iI2ZmZmZmZiIgLz48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwIiB4PSI5MCIgeT0iMjAwIiBmaWxsPSIjMzRhYzgwIiAvPjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTAiIHg9IjkwIiB5PSIyMTAiIGZpbGw9IiMzNGFjODAiIC8+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjEwIiB4PSIxMDAiIHk9IjExMCIgZmlsbD0iI2YzMzIyYyIgLz48cmVjdCB3aWR0aD0iNjAiIGhlaWdodD0iMTAiIHg9IjE3MCIgeT0iMTEwIiBmaWxsPSIjZjMzMjJjIiAvPjxyZWN0IHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgeD0iMTAwIiB5PSIxMjAiIGZpbGw9IiNmMzMyMmMiIC8+PHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjEwIiB4PSIxMTAiIHk9IjEyMCIgZmlsbD0iI2ZmZmZmZiIgLz48cmVjdCB3aWR0aD0iMjAiIGhlaWdodD0iMTAiIHg9IjEzMCIgeT0iMTIwIiBmaWxsPSIjMDAwMDAwIiAvPjxyZWN0IHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgeD0iMTUwIiB5PSIxMjAiIGZpbGw9IiNmMzMyMmMiIC8+PHJlY3Qgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiB4PSIxNzAiIHk9IjEyMCIgZmlsbD0iI2YzMzIyYyIgLz48cmVjdCB3aWR0aD0iMjAiIGhlaWdodD0iMTAiIHg9IjE4MCIgeT0iMTIwIiBmaWxsPSIjZmZmZmZmIiAvPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIxMCIgeD0iMjAwIiB5PSIxMjAiIGZpbGw9IiMwMDAwMDAiIC8+PHJlY3Qgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiB4PSIyMjAiIHk9IjEyMCIgZmlsbD0iI2YzMzIyYyIgLz48cmVjdCB3aWR0aD0iNDAiIGhlaWdodD0iMTAiIHg9IjcwIiB5PSIxMzAiIGZpbGw9IiNmMzMyMmMiIC8+PHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjEwIiB4PSIxMTAiIHk9IjEzMCIgZmlsbD0iI2ZmZmZmZiIgLz48cmVjdCB3aWR0aD0iMjAiIGhlaWdodD0iMTAiIHg9IjEzMCIgeT0iMTMwIiBmaWxsPSIjMDAwMDAwIiAvPjxyZWN0IHdpZHRoPSIzMCIgaGVpZ2h0PSIxMCIgeD0iMTUwIiB5PSIxMzAiIGZpbGw9IiNmMzMyMmMiIC8+PHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjEwIiB4PSIxODAiIHk9IjEzMCIgZmlsbD0iI2ZmZmZmZiIgLz48cmVjdCB3aWR0aD0iMjAiIGhlaWdodD0iMTAiIHg9IjIwMCIgeT0iMTMwIiBmaWxsPSIjMDAwMDAwIiAvPjxyZWN0IHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgeD0iMjIwIiB5PSIxMzAiIGZpbGw9IiNmMzMyMmMiIC8+PHJlY3Qgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiB4PSI3MCIgeT0iMTQwIiBmaWxsPSIjZjMzMjJjIiAvPjxyZWN0IHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgeD0iMTAwIiB5PSIxNDAiIGZpbGw9IiNmMzMyMmMiIC8+PHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjEwIiB4PSIxMTAiIHk9IjE0MCIgZmlsbD0iI2ZmZmZmZiIgLz48cmVjdCB3aWR0aD0iMjAiIGhlaWdodD0iMTAiIHg9IjEzMCIgeT0iMTQwIiBmaWxsPSIjMDAwMDAwIiAvPjxyZWN0IHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgeD0iMTUwIiB5PSIxNDAiIGZpbGw9IiNmMzMyMmMiIC8+PHJlY3Qgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiB4PSIxNzAiIHk9IjE0MCIgZmlsbD0iI2YzMzIyYyIgLz48cmVjdCB3aWR0aD0iMjAiIGhlaWdodD0iMTAiIHg9IjE4MCIgeT0iMTQwIiBmaWxsPSIjZmZmZmZmIiAvPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIxMCIgeD0iMjAwIiB5PSIxNDAiIGZpbGw9IiMwMDAwMDAiIC8+PHJlY3Qgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiB4PSIyMjAiIHk9IjE0MCIgZmlsbD0iI2YzMzIyYyIgLz48cmVjdCB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHg9IjcwIiB5PSIxNTAiIGZpbGw9IiNmMzMyMmMiIC8+PHJlY3Qgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiB4PSIxMDAiIHk9IjE1MCIgZmlsbD0iI2YzMzIyYyIgLz48cmVjdCB3aWR0aD0iMjAiIGhlaWdodD0iMTAiIHg9IjExMCIgeT0iMTUwIiBmaWxsPSIjZmZmZmZmIiAvPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIxMCIgeD0iMTMwIiB5PSIxNTAiIGZpbGw9IiMwMDAwMDAiIC8+PHJlY3Qgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiB4PSIxNTAiIHk9IjE1MCIgZmlsbD0iI2YzMzIyYyIgLz48cmVjdCB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHg9IjE3MCIgeT0iMTUwIiBmaWxsPSIjZjMzMjJjIiAvPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIxMCIgeD0iMTgwIiB5PSIxNTAiIGZpbGw9IiNmZmZmZmYiIC8+PHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjEwIiB4PSIyMDAiIHk9IjE1MCIgZmlsbD0iIzAwMDAwMCIgLz48cmVjdCB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHg9IjIyMCIgeT0iMTUwIiBmaWxsPSIjZjMzMjJjIiAvPjxyZWN0IHdpZHRoPSI2MCIgaGVpZ2h0PSIxMCIgeD0iMTAwIiB5PSIxNjAiIGZpbGw9IiNmMzMyMmMiIC8+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjEwIiB4PSIxNzAiIHk9IjE2MCIgZmlsbD0iI2YzMzIyYyIgLz48L3N2Zz4='
+    // const nounsSVG = 'x'
+    const onchainName = 'DinoNouns-0'
     const prefix = '/'
-    const nounsAPI = 'https://api.cloudnouns.com/v1/pfp?head=69&background=n&text='
+    // const useOffChain = false
+    // const nounsAPI = 'https://api.cloudnouns.com/v1/pfp?head=69&background=n&text='
 
-    let inputText = document.getElementById('inputText')
-    let dinoImage = document.getElementById('dinoImage')
-    // let dinoDetails = document.getElementById('dinoDetails')
-    let dinoName = document.getElementById('dinoName')
-    let outputLog = document.getElementById('log')
-    let reaction = document.getElementById('reaction')
-    let lvlTxt = document.getElementById('lvlTxt')
+    // getElementById shorthand
+    const el = id => {return document.getElementById(id)}
 
+    let inputText = el('inputText')
+    let dinoImage = el('dinoImage')
+    let dinoName = el('dinoName')
+    let outputLog = el('log')
+    let reaction = el('reaction')
+    let lvlTxt = el('lvlTxt')
+    // let dinoDetails = el('dinoDetails')
+
+    // new obj prototype
     function Dino() {
-        this.name = localStorage.dinoName
-        this.age = localStorage.dinoAge
-        this.image = localStorage.dinoImage
-        this.stats = localStorage.dinoStats ? JSON.parse(localStorage.dinoStats) : {}
+        this.name = 'dino'
+        this.image = ''
+        this.stats = {}
     }
 
+    // create a new Dino
     const ding = new Dino()
 
+    // set dynamic favicon
     const setTitleFavicon = () => {
-        // encode svg to base64
-        let favicon = `data:image/svg+xml;base64,${btoa(ding.image)}`
-        // use svg as favicon
-        document.getElementById('dynFav').href = favicon
+        // encode svg to base64 - unused because using encoded svg onchain
+        // let favicon = `data:image/svg+xml;base64,${btoa(ding.image)}`
+        let favicon = ding.image
+        // set svg as favicon
+        el('dynFav').href = favicon
         document.title = ding.name
     }
 
-    const setInit = (svg,name) => {
+    const setInit = (name) => {
         const baseStat = 
         {
             str: 1,
-            agi: 1
+            agi: 1,
+            lvl: 1,
+            age: 1
         }
 
-        localStorage.dinoImage = svg
-        localStorage.dinoName = name
-        localStorage.dinoAge = 1
-        localStorage.dinoStats = JSON.stringify(baseStat)
-        localStorage.mapping = JSON.stringify({
-            a:'',b:'',x:'',y:''
-        })
-
-        ding.stats = JSON.parse(localStorage.dinoStats)
-        ding.name = localStorage.dinoName
-        ding.image = localStorage.dinoImage
-        ding.age = 1
+        ding.stats = baseStat
+        ding.name = name
+        ding.image = nounsSVG
 
         dinoName.innerHTML = ding.name
         // dinoDetails.innerHTML = `
@@ -386,72 +353,49 @@
         // |
         // AGI : ${ding.stats.agi}
         // `
-        dinoImage.innerHTML = ding.image
+        dinoImage.src = ding.image
+        lvlTxt.innerHTML = `LV${baseStat.lvl}`
 
         setTitleFavicon()
     }
 
     const getDino = async (name) => {
-        await fetch(nounsAPI+name)
-            .then((response) => response.text())
-            .then((svg) => setInit(svg,name))
+        // await fetch(nounsAPI+name)
+        //     .then((response) => response.text())
+        //     .then((svg) => setInit(svg,name))
+        setInit(name)
     }
 
-    if (!localStorage.dinoImage && !localStorage.dinoName && !localStorage.dinoStats && !localStorage.mapping) {
-        getDino('dino')
-    }
+    getDino(onchainName)
+
+    const statError = () => {return console.error('No such stat')}
 
     const addStat = (key,val) => {
         if (ding.stats.hasOwnProperty(key)) {
             ding.stats[key] += val
-            // console.log(ding.stats[key])
         } else {
-            console.error('No such stat')
+            statError()
         }
     }
 
     const subStat = (key,val) => {
         if (ding.stats.hasOwnProperty(key)) {
             ding.stats[key] -= val
-            // console.log(ding.stats[key])
         } else {
-            console.error('No such stat')
+            statError()
         }
     }
 
     const setStat = (key,val) => {
         if (ding.stats.hasOwnProperty(key)) {
             ding.stats[key] = val
-            // console.log(ding.stats[key])
         } else {
-            console.error('No such stat')
+            statError()
         }
     }
 
-
-    const updateStats = async () => {
-        if (ding.stats) {
-            let stats = ding.stats
-            // console.log(stats)
-
-            let age = ding.age
-
-            localStorage.dinoAge = age
-            localStorage.dinoStats = JSON.stringify(stats)
-
-            // dinoDetails.innerHTML = `
-            //     STATS<br>
-            //     AGE : ${parseFloat(ding.age).toFixed(2)}
-            //     |
-            //     STR : ${ding.stats.str.toFixed(2)}
-            //     |
-            //     AGI : ${ding.stats.agi.toFixed(2)}
-            //     `
-        }
-    }
-
+    // Util functions
     const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
-
     const resetAnimation = () => dinoImage.style.animationName = ''
     const clearLog = () => log('')
     const clearReact = () => react('')
@@ -462,29 +406,22 @@
     if (ding.image && ding.name && ding.stats) {
         setTitleFavicon()
 
-        dinoImage.innerHTML = ding.image
+        dinoImage.src = ding.image
         dinoName.innerHTML = ding.name
 
-        updateStats()
     }
 
-    inputText.addEventListener('keypress', function (event) {
-        if (event.key === 'Enter') {
-            event.preventDefault()
-            runCMD()
-        }
-    })
 
-    const updateAge = () => {
-        ding.age = parseFloat(ding.age) + 0.1
-        updateStats()
-    }
-
-    setInterval('updateAge()', 1000 * 60) // 1 min
+    // update age by 0.1 every 1 min
+    setInterval(() => {
+        addStat('lvl', 0.1)
+        lvlTxt.innerHTML = `LV${ding.stats.lvl.toFixed(1)}`
+    }, 1000 * 3) // 1 min
 
 
     // COMMANDS ------------------------------------------------------
     // Create your command logic
+    // Created as object so that you can modify it, add anything you want
 
     const run = {
         name: 'run',
@@ -506,7 +443,6 @@
             const agiMult = parseFloat(ding.stats.agi)
             addStat('agi', 0.01 * agiMult)
             resetAnimation()
-            updateStats()
         }
     }
 
@@ -531,7 +467,6 @@
             let strMult = parseFloat(ding.stats.str)
             addStat('str', 0.01 * strMult)
             resetAnimation()
-            updateStats()
         }
     }
 
@@ -615,17 +550,17 @@
             await sleep(1000)
             log('fetching default dino..')
             await sleep(1000)
-            getDino('dino')
+            getDino(onchainName)
             clearLog()
             clearReact()
         }
     }
 
     let mapping = {
-        a : localStorage.mapping ? JSON.parse(localStorage.mapping).a : '' ,
-        b : localStorage.mapping ? JSON.parse(localStorage.mapping).b : '' ,
-        x : localStorage.mapping ? JSON.parse(localStorage.mapping).x : '' ,
-        y : localStorage.mapping ? JSON.parse(localStorage.mapping).y : '' ,
+        a : '' ,
+        b : '' ,
+        x : '' ,
+        y : '' ,
     }
 
     const map = {
@@ -643,7 +578,6 @@
                 log('mapping buttons..')
                 await sleep(1000)
                 mapping[btn] = cmd
-                localStorage.mapping = JSON.stringify(mapping)
                 log('done!')
                 await sleep(1000)
                 clearLog()
@@ -679,6 +613,7 @@
     // Add your commands here
     let cmds = [run,jump,dino,ping,help,clear,reset,map,dl]
 
+    // Run the commands
     const runCMD = async () => {
         if (!inputText.value.startsWith(prefix)) return runConv()
 
@@ -696,21 +631,24 @@
             }
             await command.exec(args)  
         } catch (error) {
-            console.error(error)
-            console.log('there was an error trying to execute that command!')
+            log(error)
         }
     }
 
+    // Automated replies
     const repl = [
         {hi:'hello human'},
+        {hello:'rawr'},
         {haha:'hahaha'},
         {hungry:'plis go eat'},
         {help:'use /help'},
         {wait:'wat?'},
         {yes:'yes?'},
+        {nouns:'nounish!'},
         {no:'no?'}
     ]
 
+   // Run conversation
     const runConv = async () => {
         const msg = inputText.value
         let rr = repl.filter(r => r[msg] != null)
@@ -737,11 +675,13 @@
         }
     }
 
-    let btnA = document.getElementById('btnA')
-    let btnB = document.getElementById('btnB')
-    let btnX = document.getElementById('btnX')
-    let btnY = document.getElementById('btnY')
+    // Buttons (A) (B) (X) (Y)
+    let btnA = el('btnA')
+    let btnB = el('btnB')
+    let btnX = el('btnX')
+    let btnY = el('btnY')
 
+    // Buttons onclick functions
     btnA.onclick = async () => {
         if(mapping.a == '') return log('/map a [cmd] | eg: /map a run')
         inputText.value = `\/${mapping.a}`
@@ -763,9 +703,20 @@
         runCMD()
     }
 
-    document.addEventListener('keypress', (event) => {
+    // Check for keypress events
+    document.addEventListener('keypress', (e) => {
+        // Press enter to run command
+        if (e.key === 'Enter') {
+            e.preventDefault()
+            runCMD()
+        }
+        // Check if text input is inactive
         if (inputText != document.activeElement){
-            switch (event.key){
+            switch (e.key){
+                case 'Enter':
+                    e.preventDefault()
+                    runCMD()
+                    break
                 case 'a':
                     btnA.click()
                     break

@@ -4,7 +4,7 @@ A work in progress
 
 ![Image](https://cdn.discordapp.com/attachments/1014135287087108196/1028545362522292244/unknown.png)
 
-DinoNouns(working title). An interactive NFT project by Nero One based off [nouns](https://nouns.wtf) dino head
+DinoNouns. An onchain, dynamic and interactive NFT project by Nero One based off [nouns](https://nouns.wtf) dino head
 
 # Ideas
 I've worked on several Interactive NFT projects and most of it was off-chain, [COMLINK+](https://opensea.io/assets/ethereum/0x1b7e73c6d30dd5dd811cbd26d9bf36e34882fd39/3)(pointed to a hosted site), [tulsv1](https://exchange.art/editions/HkMrXQ7NRZy7UuSvLSpW8Vhut7ZnPn9phRYKerCZ8uba)(uploaded to IPFS).
@@ -13,12 +13,14 @@ However this time I wanted to put the whole HTML on-chain + interactive.
 
 So to achieve this, all asset need to be encoded in base64. I'm using vanilla HTML, CSS and JS to make it simple as possible without any other dependencies.
 
-The only off-chain dependency would be CloudNouns API for SVG generation. In future, I will look into getting the SVG from NounsDescriptor contract.
+I'm currently using NounsDescriptor contract to generate onchain SVG for DinoNouns. 
+
+Dino name is stored onchain and to change, you're required to interact with the DinoNouns contract. Changing name will reroll the Dino.
 
 ## Features
 - Text-based command interaction
-- Uses [CloudNouns](https://cloudnouns.com) API to generate new Dino nouns
-- Dino stats
+- Uses NounsDescriptor contract to generate new Dino nouns
+- Dynamic onchain name
 - CSS Animation
 - Basic Gamification
 - Uses local storage for data
@@ -83,14 +85,18 @@ Build for production. File will be created in `dist`
 - dino reaction text
 - cmd to map button `/map`
 - keyboard shortcut, A,B,X,Y button mapped to responding keys
-- `/dl` to download your dino
+- `/dl` to download your dino // doesn't work on opensea
+- optimize HTML and deploy renderer contract in Solidity
+- dino name on-chain. change name need to interact on-chain
+- use onchain svg from nouns contract
 
 ## TODO
-- optimize HTML and deploy renderer contract in Solidity
+- add icons for the stats, preferably 1-bit
+- stats creation and manipulation
+
 
 ## FUTURE
 - utils cmd for nounish stuff
 - use gamepad api 
 - chrome extension?
-- add icons for the stats, preferably 1-bit
-- stats creation and manipulation
+- dna for each dino > traits
