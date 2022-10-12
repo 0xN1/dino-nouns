@@ -1,6 +1,6 @@
 # dino-nouns
 
-A work in progress
+A ⌐◨-◨ work in progress
 
 ![Image](https://cdn.discordapp.com/attachments/1014135287087108196/1028545362522292244/unknown.png)
 
@@ -23,10 +23,10 @@ Dino name is stored onchain and to change, you're required to interact with the 
 - Dynamic onchain name
 - CSS Animation
 - Basic Gamification
-- Uses local storage for data
 - Dynamic favicon and title
 - Utility commands like `/help`, `/reset`, `/map`
 - Commands have `30%` chance to fail
+- Teach your dino words!
 - more..
 
 ---
@@ -44,7 +44,8 @@ List of commands
 |/clear|clear logs|/clear|/clear|
 |/reset|reset to default dino|/reset|/reset|
 |/map|map command to button|/map [btn][command]|/map a run|
-|/dl|download your dino SVG file|/dl|/dl|
+| ~~/dl ~~| ~~download your dino SVG file ~~| ~~/dl ~~| ~~/dl ~~|
+| /teach| teach your dino words!|/teach [word] [reply]| /teach yo whatsupp!|
 
 ## Demo
 [DinoNouns](https://recondite-flame.surge.sh)
@@ -85,7 +86,6 @@ Build for production. File will be created in `dist`
 - dino reaction text
 - cmd to map button `/map`
 - keyboard shortcut, A,B,X,Y button mapped to responding keys
-- `/dl` to download your dino // doesn't work on opensea
 - optimize HTML and deploy renderer contract in Solidity
 - dino name on-chain. change name need to interact on-chain
 - use onchain svg from nouns contract
@@ -93,7 +93,8 @@ Build for production. File will be created in `dist`
 ## TODO
 - add icons for the stats, preferably 1-bit
 - stats creation and manipulation
-
+- add solidity contracts
+- instructions to fork
 
 ## FUTURE
 - utils cmd for nounish stuff
